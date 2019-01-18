@@ -4,10 +4,7 @@
 testpack=$(cd "$(dirname $0)/.." && pwd)
 source "${testpack}/lib/common.sh"
 
-if [[ "$TOOL" == "gomodules" ]]; then
-  echo "true" > "${3}/GO_INSTALL_TOOLS_IN_IMAGE"
-  echo "true" > "${3}/GO_SETUP_GOPATH_IN_IMAGE"
-else
+if [[ "$TOOL" != "gomodules" ]]; then
   echo "true" > "${3}/GO_INSTALL_TOOLS_IN_IMAGE"
   echo "true" > "${3}/GO_SETUP_GOPATH_IN_IMAGE"
 fi

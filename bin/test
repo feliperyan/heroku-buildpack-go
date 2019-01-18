@@ -25,7 +25,7 @@ if [ -f "${build}/.heroku/go/.meta" ]; then
   source "${build}/.heroku/go/.meta"
 fi
 
-if [[ "${TOOL}" == "gomodules" ]]; then
+if [[ "${TOOL}" != "gomodules" ]]; then
     export GOROOT="${build}/.heroku/go"
     PATH="${build}/bin:${GOROOT}/bin:${PATH}"
 else
